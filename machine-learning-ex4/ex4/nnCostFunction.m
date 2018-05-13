@@ -67,8 +67,23 @@ A2 = sigmoid(X*Theta1');
 A2= [ones(size(A2,1),1),A2];
 
 h = sigmoid(A2 * Theta2');
+j_temp = 0;
+for k = 1: 10 
+	j_temp = j_temp + sum(((y==k) .* log(h(:,k)) + (1-(y==k)) .* log(1-h(:,k))));
+endfor
+J=(-1/m) * j_temp + (lambda / (2*m)) * (sum(sum(Theta1(:, 2:end) .^ 2)) + sum(sum(Theta2(:,2:end) .^2))) ;
 
-J = (-1/m) * 
+for t = 1: m
+	a1_t = X(t, :);
+	z2_t = Theta1 * a1_t';
+	a2_t = sigmoid(z2_t);
+	
+	a3_t = zeros(1, k);
+	d3_t = zeros(1,k);
+	for k=1:10 
+		d3_t = 
+	endfor
+endfor
 
 
 

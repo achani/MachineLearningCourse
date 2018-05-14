@@ -73,15 +73,22 @@ for k = 1: 10
 endfor
 J=(-1/m) * j_temp + (lambda / (2*m)) * (sum(sum(Theta1(:, 2:end) .^ 2)) + sum(sum(Theta2(:,2:end) .^2))) ;
 
+
+%Theta1 => 25 X 401
+%Theta2 => 10 X 26
+%X => 5000 X 401 (After adding a0)
 for t = 1: m
-	a1_t = X(t, :);
-	z2_t = Theta1 * a1_t';
-	a2_t = sigmoid(z2_t);
+	a1_t = X(t, :); % 1 X 401 
+	z2_t = Theta1 * a1_t'; % z2_t => 25 X 1
+	a2_t = [1;sigmoid(z2_t)]; %a2_t => 26 X 1
 	
-	a3_t = zeros(1, k);
-	d3_t = zeros(1,k);
+	z3_t = Theta2 * a2_t; %z3_t => 10 X 1
+	a3_t = sigmoid(z3_t); %a3_t => 10 X 1
+	
+	
+	
 	for k=1:10 
-		d3_t = 
+		%d3_t = 
 	endfor
 endfor
 

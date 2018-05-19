@@ -73,7 +73,6 @@ for k = 1: num_labels
 endfor
 J=(-1/m) * j_temp + (lambda / (2*m)) * (sum(sum(Theta1(:, 2:end) .^ 2)) + sum(sum(Theta2(:,2:end) .^2))) ;
 
-
 %Theta1 => 25 X 401
 %Theta2 => 10 X 26
 %X => 5000 X 401 (After adding a0)
@@ -106,11 +105,7 @@ Theta2_reg(:,1) = 0;
 
 Theta1_grad = Theta1_grad +  ((lambda / m) * (Theta1 .* Theta1_reg));
 Theta2_grad = Theta2_grad +  ((lambda / m) * (Theta2 .* Theta2_reg));
-
-
-
 % -------------------------------------------------------------
-
 % =========================================================================
 
 % Unroll gradients

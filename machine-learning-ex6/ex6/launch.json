@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "octave",
+            "request": "launch",
+            "name": "Octave Debug Adapter(preview)",
+            "exec": "octave-cli",
+            "program": "${command:AskForProgramName}"
+        }
+    ]
+  }

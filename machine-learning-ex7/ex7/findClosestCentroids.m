@@ -20,12 +20,19 @@ idx = zeros(size(X,1), 1);
 %
 % Note: You can use a for-loop over the examples to compute this.
 %
-
-
-
-
-
-
+for i=1:size(X,1)
+  xi = X(i,:);
+  [_,idx(i)] = min(sum((xi-centroids).^2,2));
+%  distance_prev=0;
+%  for k=1:K
+%    uk = centroids(k,:);
+%    distance = sum((xi-uk).^2);
+%    if(k>1 && distance < distance_prev)
+%      idx(i)=k;      
+%    endif
+%    distance_prev=distance;
+%  endfor
+endfor 
 
 % =============================================================
 
